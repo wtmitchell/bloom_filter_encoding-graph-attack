@@ -23,6 +23,7 @@ both gcc and clang on Linux and clang on MacOS.
 Several of the dependencies ([Google Test](https://github.com/google/googletest), [Crypto++](https://cryptopp.com/), [Botan](https://botan.randombit.net/)) are pulled in by the build system.
 
 Dependencies that are not automatically installed are:
+* [cmake](https://cmake.org/)
 * [libgmp](https://gmplib.org/)
 
 
