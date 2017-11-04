@@ -1,0 +1,54 @@
+//===-- hash/HashFunctions.cpp - Interface for Hash Functions--------------===//
+//
+// Copyright 2017 Will Mitchell
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+//===----------------------------------------------------------------------===//
+//
+// This file contains a couple default implementations for hash functions
+//
+//===----------------------------------------------------------------------===//
+
+#include "hash/HashFunction.h"
+
+#include <cstddef>
+using std::size_t;
+#include <string>
+using std::string;
+#include <vector>
+using std::vector;
+
+#include "util/Types.h"
+
+// Declare this one function out-of-line to prevent weak vtables for class
+// HashFunction
+string hash::HashFunction::name() const {
+  return "HashFunction abstract base class";
+}
+
+vector<byte> hash::IncrementalHashFunction::calculate(const byte in[],
+                                                      const size_t length) {
+  update(in, length);
+  return final();
+}
+
+vector<byte> hash::IncrementalHashFunction::calculate(const vector<byte> &in) {
+  update(in);
+  return final();
+}
+
+vector<byte> hash::IncrementalHashFunction::calculate(const string &in) {
+  update(in);
+  return final();
+}
