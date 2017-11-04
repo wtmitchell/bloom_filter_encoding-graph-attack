@@ -33,7 +33,7 @@ Recommended tools:
 On Linux your package manager should provide this. On MacOS, installation via [homebrew](http://brew.sh) is recommended.
 
 # Running the code
-If you are on Linux or MacOS, running the included shell script setup_linux_builds or setup_macos_builds will setup multiple builds of the code using various debug and release mode configurations. A sample to get the code executing:
+If you are on Linux or MacOS, running the included shell script `setup_linux_builds` or `setup_macos_builds` will setup multiple builds of the code using various debug and release mode configurations. A sample to get the code executing:
 
 ```
 $ ./setup_linux_builds
@@ -45,6 +45,6 @@ This will setup multiple builds, and using clang with optimizations, compile eve
 
 # Code structure
 
-The code is organized into several self-contained libraries. These are organized in the lib and include directories. The apps directories contain the programs that use the libraries for various tasks. The libraries are tested via the unit tests in the tests directory.
+The code is organized into several self-contained libraries. These are organized in the `lib` and `include` directories. The `apps` directories contain the programs that use the libraries for various tasks. The libraries are tested via the unit tests in the `tests` directory.
 
 Note: The code make heavy use of templates and template meta-programming. The easiest way to understand how things work is to look through the unit tests.
